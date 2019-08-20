@@ -21,14 +21,14 @@ public class MyDirectedGraph implements Graph {
     }
 
     @Override
-    public List<MyEdge> getPath(MyVertex from, MyVertex to) {
+    public MyPath getPath(MyVertex from, MyVertex to) {
 
         int[][] matrixWeight = getMatrixWeight();
 
 
 
 
-        return Collections.emptyList();
+        return null;
     }
 
     private int[][] getMatrixWeight(){
@@ -38,7 +38,6 @@ public class MyDirectedGraph implements Graph {
             int indFrom = vertexList.indexOf(myEdge.getFrom());
             int indTo = vertexList.indexOf(myEdge.getTo());
             matrix[indFrom][indTo] = 1;
-            matrix[indTo][indFrom] = 1;
         });
 
         return matrix;

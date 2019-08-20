@@ -5,8 +5,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class MyDirectedGraphTest {
-
+public class MyUndirectedGraphTest {
     @Test
     public void testDirectGraph(){
 
@@ -28,26 +27,29 @@ public class MyDirectedGraphTest {
         MyEdge edge4_6 = new MyEdge(vertex4, vertex6);
         MyEdge edge7_6 = new MyEdge(vertex7, vertex6);
 
-        Graph directedGraph = new MyDirectedGraph();
-        directedGraph.addVertex(vertex0);
-        directedGraph.addVertex(vertex1);
-        directedGraph.addVertex(vertex2);
-        directedGraph.addVertex(vertex3);
-        directedGraph.addVertex(vertex4);
-        directedGraph.addVertex(vertex5);
-        directedGraph.addVertex(vertex6);
-        directedGraph.addVertex(vertex7);
+        Graph graph = new MyUndirectedGraph();
+        graph.addVertex(vertex0);
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        graph.addVertex(vertex3);
+        graph.addVertex(vertex4);
+        graph.addVertex(vertex5);
+        graph.addVertex(vertex6);
+        graph.addVertex(vertex7);
 
-        directedGraph.addEdge(edge0_1);
-        directedGraph.addEdge(edge1_2);
-        directedGraph.addEdge(edge1_5);
-        directedGraph.addEdge(edge2_3);
-        directedGraph.addEdge(edge3_7);
-        directedGraph.addEdge(edge5_4);
-        directedGraph.addEdge(edge4_6);
-        directedGraph.addEdge(edge7_6);
+        graph.addEdge(edge0_1);
+        graph.addEdge(edge1_2);
+        graph.addEdge(edge1_5);
+        graph.addEdge(edge2_3);
+        graph.addEdge(edge3_7);
+        graph.addEdge(edge5_4);
+        graph.addEdge(edge4_6);
+        graph.addEdge(edge7_6);
 
-       /* List<MyEdge> path = directedGraph.getPath(vertex0, vertex6);
+        MyPath path = graph.getPath(vertex0, vertex6);
+        System.out.println(path);
+
+        /*List<MyEdge> path = graph.getPath(vertex0, vertex6);
 
         Assert.assertEquals(4, path.size());
         Assert.assertEquals(edge0_1, path.get(0));
@@ -56,6 +58,4 @@ public class MyDirectedGraphTest {
         Assert.assertEquals(edge4_6, path.get(3));*/
 
     }
-
-
 }
