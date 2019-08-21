@@ -12,6 +12,7 @@ public class MyPath {
     public static MyPath of(MyPath path){
         MyPath newPath = new MyPath();
         newPath.edges.addAll(path.edges);
+        newPath.vertexList.addAll(path.vertexList);
         newPath.finished = path.finished;
         return newPath;
     }
@@ -38,5 +39,22 @@ public class MyPath {
 
     public void setFinished(boolean finished) {
         this.finished = finished;
+    }
+
+    public List<MyVertex> getVertexList(){
+        return new ArrayList<>(vertexList);
+    }
+
+    public int getWeight(){
+        return edges.size();
+    }
+
+    @Override
+    public String toString() {
+        return "MyPath{" +
+                "edges=" + edges +
+                ", vertexList=" + vertexList +
+                ", finished=" + finished +
+                '}';
     }
 }
