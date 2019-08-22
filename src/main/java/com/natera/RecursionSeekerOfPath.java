@@ -39,10 +39,9 @@ public class RecursionSeekerOfPath implements SeekerOfPath {
         }
 
         List<MyEdge> myEdges = mapEdges.get(currentVertex);
-        List<MyVertex> vertexList = currentPath.getVertexList();
         if(myEdges != null) {
             for (MyEdge myEdge : myEdges) {
-                if (!vertexList.contains(myEdge.getTo())) {
+                if (!currentPath.containsVertex(myEdge.getTo())) {
                     MyPath newPath = MyPath.of(currentPath);
                     newPath.addEdge(myEdge);
                     newPath.addVertex(myEdge.getTo());
